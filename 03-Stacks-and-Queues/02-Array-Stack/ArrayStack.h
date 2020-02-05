@@ -4,16 +4,15 @@
  * @Date: 2020-02-06 01:06:18
  */
 
-#include <iostream>
 #include "Array.h"
 #include "Stack.h"
+#include <iostream>
 
-template <class T>
-class ArrayStack : public Stack<T> {
-   private:
+template <class T> class ArrayStack : public Stack<T> {
+  private:
     Array<T> *array;
 
-   public:
+  public:
     ArrayStack(int capacity) { array = new Array<T>(capacity); }
 
     ArrayStack() { array = new Array<T>(); }

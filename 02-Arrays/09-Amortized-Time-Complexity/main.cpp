@@ -9,8 +9,7 @@
 
 using namespace std;
 
-int main(int argc, char const *argv[]) 
-{
+int main(int argc, char const *argv[]) {
     Array<int> *array = new Array<int>();
     for (int i = 0; i < 5; i++) {
         array->addLast(i);
