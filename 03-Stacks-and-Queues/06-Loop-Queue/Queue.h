@@ -1,19 +1,14 @@
 /*
  * @Description:
  * @Author: zhengchengzhong
- * @Date: 2020-02-06 00:59:54
+ * @Date: 2020-02-06 07:44:25
  */
-
 template <class T>
-class Stack {
+class Queue {
 public:
     int getSize();
-
     bool isEmpty();
-
-    void push(T e);
-
-    T pop();
-
-    T peek();
+    void enqueue(T e);
+    T dequeue();
+    T getFront();
 };

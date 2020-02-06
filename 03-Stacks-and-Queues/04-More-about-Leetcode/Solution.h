@@ -8,37 +8,37 @@
 #include <iostream>
 
 class Solution {
-  public:
+public:
     bool isValid(std::string s) {
-        ArrayStack<char>* stack = new ArrayStack<char>();
-        for(int i = 0; i < s.length(); i++){
+        ArrayStack<char> *stack = new ArrayStack<char>();
+        for (int i = 0; i < s.length(); i++) {
             char c = s.at(i);
-            if(c == '(' || c == '[' || c == '{'){
+            if (c == '(' || c == '[' || c == '{') {
                 stack->push(c);
-            }
-            else{
-                if(stack->isEmpty()){
+            } else {
+                if (stack->isEmpty()) {
                     return false;
                 }
                 char topChar = stack->pop();
-                if(c == ')' && topChar != '('){
+                if (c == ')' && topChar != '(') {
                     return false;
                 }
-                if(c == ']' && topChar != '['){
+                if (c == ']' && topChar != '[') {
                     return false;
                 }
-                if(c == '}' && topChar != '{'){
+                if (c == '}' && topChar != '{') {
                     return false;
                 }
                 // stack->pop();
             }
-            
         }
         return stack->isEmpty();
     }
-  private:
-    template <class T> class Array {
-      private:
+
+private:
+    template <class T>
+    class Array {
+       private:
         T *data;
         int size;
         int capacity;
@@ -53,7 +53,7 @@ class Solution {
             newData = NULL;
         }
 
-      public:
+       public:
         Array(int capacity) {
             data = new T[capacity];
             size = 0;
@@ -182,7 +182,7 @@ class Solution {
 
     template <class T>
     class Stack {
-      public:
+       public:
         int getSize();
 
         bool isEmpty();
@@ -196,10 +196,10 @@ class Solution {
 
     template <class T>
     class ArrayStack : public Stack<T> {
-      private:
+       private:
         Array<T> *array;
 
-      public:
+       public:
         ArrayStack(int capacity) { array = new Array<T>(capacity); }
 
         ArrayStack() { array = new Array<T>(); }

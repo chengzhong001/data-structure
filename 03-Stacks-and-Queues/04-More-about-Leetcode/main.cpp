@@ -6,9 +6,7 @@
 #include <iostream>
 #include "Solution.h"
 
-int main(int argc, char const *argv[])
-{   
-    Solution solution = Solution();
+int main(int argc, char const *argv[]) {
     std::cout << std::boolalpha << Solution().isValid("{(){}}") << std::endl;
     std::cout << std::boolalpha << Solution().isValid("{(){}") << std::endl;
     return 0;
