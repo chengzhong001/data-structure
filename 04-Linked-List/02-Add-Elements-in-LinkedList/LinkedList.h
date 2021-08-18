@@ -44,7 +44,7 @@ public:
         else
         {
             Node<T> prev = head;
-            for (int i = 0; i < index; i++)
+            for (int i = 0; i < index - 1; i++)
                 prev = prev.next;
             // Node<T> node = new Node<T>(e);
             // node.next = prev.next;
@@ -55,5 +55,4 @@ public:
     }
 
     void addLast(T e) { add(size, e); }
-    
 };
