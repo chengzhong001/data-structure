@@ -1,7 +1,7 @@
 #include <cassert>
 #include <string>
-template <typename T>
 
+template <typename T>
 class Node
 {
 public:
@@ -13,6 +13,8 @@ public:
     Node(T e) : e(e), next(nullptr) {}
 
     Node() : e(), next(nullptr) {}
+
+    ~Node() { delete next; }
 };
 
 template <typename T>
@@ -24,6 +26,7 @@ private:
 
 public:
     LinkedList() { dummyHead = new Node<T>(); }
+    ~LinkedList() { delete dummyHead; }
 
     int getSize() { return size; }
 
@@ -34,7 +37,6 @@ public:
 
         if (index < 0 || index > size)
             assert("add failed, llega index");
-        // std::cout << "size: " << size << "index: " << index << std::endl;
 
         Node<T> *prev = dummyHead;
         for (int i = 0; i < index; i++)
