@@ -6,13 +6,13 @@ class Node
 {
 public:
     T e;
-    Node *next;
+    Node<T> *next;
 
     Node(T e, Node *next) : e(e), next(next) {}
 
     Node(T e) : e(e), next(nullptr) {}
 
-    Node() : e(), next(nullptr) {}
+    Node() :  next(nullptr) {}
 
     ~Node() { delete next; }
 };
@@ -25,8 +25,12 @@ private:
     int size;
 
 public:
-    LinkedList() { dummyHead = new Node<T>(); }
-    ~LinkedList() { delete dummyHead; }
+    LinkedList()
+    {
+        dummyHead = new Node<T>();
+        size = 0;
+    }
+    // ~LinkedList() { delete dummyHead; }
 
     int getSize() { return size; }
 

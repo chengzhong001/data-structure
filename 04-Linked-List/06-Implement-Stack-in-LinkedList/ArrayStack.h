@@ -18,10 +18,10 @@ class ArrayStack : public Stack<T> {
 
     ArrayStack() { array = new Array<T>(); }
 
-    ~ArrayStack() {
-        delete array;
-        array = nullptr;
-    }
+    // ~ArrayStack() {
+    //     delete array;
+    //     array = nullptr;
+    // }
 
     int getSize() { return array->getSize(); }
 

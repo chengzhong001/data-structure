@@ -51,9 +51,12 @@ int main(int argc, char const *argv[])
 
     // return 0;
     int optCount = 10000000;
+    
     std::cout << "ArrayStack: " << testStack(arraystack, optCount) << std::endl;
     std::cout << "LinkedListStack: " << testStack(linkedstack, optCount) << std::endl;
     
-    std::cout << "LinkedListStack: " << testStack2(linkedstack2, optCount) << std::endl;
     std::cout << "ArrayStack: " << testStack2(arraystack2, optCount) << std::endl;
+    std::cout << "LinkedListStack: " << testStack2(linkedstack2, optCount) << std::endl;
+
+
 }

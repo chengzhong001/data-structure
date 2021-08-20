@@ -9,7 +9,7 @@ class LinkedListStack : public Stack<T>
 {
 public:
     LinkedListStack() { list = new LinkedList<T>(); }
-    ~LinkedListStack(){delete list;}
+    // ~LinkedListStack(){delete list;}
 
     bool isEmpty() { return list->isEmpty(); }
 
