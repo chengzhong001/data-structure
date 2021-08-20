@@ -14,9 +14,9 @@ public:
 };
 
 template <typename T>
-class LinkedListQueue : public Queue
+class LinkedListQueue : public Queue<T>
 {
-private:
+public:
     /* data */
 
     int getSize() { return size; }
@@ -28,19 +28,19 @@ private:
         if (tail == nullptr)
         {
             tail = new Node<T>(e);
-            head = tail
+            head = tail;
         }
         else
         {
             tail->next = new Node<T>(e);
-            tail = tail->next
+            tail = tail->next;
         }
         size++;
     }
 
     T dequeue()
     {
-        if (isEmpty)
+        if (isEmpty())
             assert("LinkedListQueue is empty");
         Node<T> *retNode = head;
         head = head->next;
@@ -58,17 +58,18 @@ private:
 
     std::string toString()
     {
-        sdt::string res = "Queue: front ";
+        std::string res = "Queue: front ";
         Node<T> *cur = head;
         while (cur != nullptr)
         {
             res += std::to_string(cur->e) + "->";
             cur = cur->next;
         }
+        res += "NULL tail";
         return res;
     }
 
-public:
+private:
     int size;
     Node<T> *head;
     Node<T> *tail;
