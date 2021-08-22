@@ -5,7 +5,7 @@ class Solution {
 public:
     ListNode* removeElements(ListNode* head, int val) {
         while (head != nullptr && head->val == val)
-        {
+        { //新的head节点的值也和原来头节点相同，所有while
             ListNode *delNode = head;
             head = head->next;
             delNode = nullptr;
