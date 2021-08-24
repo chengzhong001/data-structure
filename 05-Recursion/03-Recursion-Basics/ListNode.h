@@ -1,6 +1,7 @@
 
 #include <assert.h>
 #include <string>
+#include <iostream>
 
 //Definition for singly-linked list.
 class ListNode
@@ -22,6 +23,7 @@ public:
         {
             cur->next = new ListNode(arr[i]);
             cur = cur->next;
+            
         }
     }
     std::string toString()
@@ -32,8 +34,10 @@ public:
         {
             res += std::to_string(cur->val) + "->";
             cur = cur->next;
+            
         }
         res += "NULL";
+
         return res;
     }
 };
