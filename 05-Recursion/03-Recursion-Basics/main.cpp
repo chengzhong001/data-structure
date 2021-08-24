@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Solution1.h"
+#include "Solution5.h"
 int main(int argc, char const *argv[])
 {
     int arr[] = {3, 2, 3, 4, 6, 5};
