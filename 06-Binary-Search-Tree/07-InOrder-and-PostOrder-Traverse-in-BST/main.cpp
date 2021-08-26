@@ -11,8 +11,11 @@ int main(int argc, char const *argv[])
     // std::cout << "\n";
     bst->preOrder(); 
     std::cout << "\n";
-    
+
     bst->inOrder(); 
+    std::cout << "\n";
+
+    bst->postOrder(); 
     std::cout << "\n";
 
     // std::cout << bst->toString() << std::endl;

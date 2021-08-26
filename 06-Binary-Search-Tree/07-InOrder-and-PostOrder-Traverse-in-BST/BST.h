@@ -31,8 +31,14 @@ public:
         preOrder(root);
     }
 
-    void inOrder(){
+    void inOrder()
+    {
         inOrder(root);
+    }
+
+    void postOrder()
+    {
+        postOrder(root);
     }
 
     std::string toString()
@@ -91,24 +97,34 @@ private:
         }
     }
 
-    void inOrder(Node<T>* node){
-        if(node == nullptr)
-            return;
-        preOrder(node->left);
-        std::cout << node->e << std::endl;
-        preOrder(node->right);
-    }
-
-    void generateBSTString(Node<T> *node, int depth, std::string& res)
+    void inOrder(Node<T> *node)
     {
         if (node == nullptr)
-        { 
-           res += generateDepthString(depth) + "null\n";
-           return;
+            return;
+        inOrder(node->left);
+        std::cout << node->e << std::endl;
+        inOrder(node->right);
+    }
+
+    void postOrder(Node<T> *node)
+    {
+        if (node == nullptr)
+            return;
+        postOrder(node->left);
+        postOrder(node->right);
+        std::cout << node->e << std::endl;
+    }
+
+    void generateBSTString(Node<T> *node, int depth, std::string &res)
+    {
+        if (node == nullptr)
+        {
+            res += generateDepthString(depth) + "null\n";
+            return;
         }
         res += generateDepthString(depth) + std::to_string(node->e) + "\n";
-        generateBSTString(node->left, depth+1, res);
-        generateBSTString(node->right, depth+1, res);
+        generateBSTString(node->left, depth + 1, res);
+        generateBSTString(node->right, depth + 1, res);
     }
 
     std::string generateDepthString(int depth)
