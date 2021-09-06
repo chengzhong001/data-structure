@@ -1,23 +1,25 @@
 #include <iostream>
 #include "Array.h"
 #include "MaxHeap.h"
-#include <random>
+// #include <random>
 #include <vector>
 
-double testHeap(int testData[], int n, bool isHeapify)
+template<typename T>
+double testHeap(T testData[], int n, bool isHeapify)
 {
     clock_t startTime = clock();
 
-    MaxHeap<int> *maxHeap;
+    MaxHeap<T>* maxHeap;
     if (isHeapify)
-        maxHeap = new MaxHeap<int>(testData, n);
+        maxHeap = new MaxHeap<T>(testData, n);
     else
     {
-        maxHeap = new MaxHeap<int>();
+        maxHeap = new MaxHeap<T>();
         for (int i = 0; i < n; i++)
             maxHeap->add(testData[i]);
     }
-    int arr[10];
+
+    int arr[n];
 
     for (int i = 0; i < n; i++)
         arr[i] = maxHeap->extractMax();
@@ -25,7 +27,36 @@ double testHeap(int testData[], int n, bool isHeapify)
     for (int i = 1; i < n; i++)
         if (arr[i - 1] < arr[i])
             assert("error");
-    
+
+    std::cout << "test maxheap completed\n";
+
+    clock_t endTime = clock();
+    return (double)(endTime - startTime) / CLOCKS_PER_SEC;
+}
+
+double testHeap2(int testData[], int n, bool isHeapify)
+{
+
+    clock_t startTime = clock();
+
+    MaxHeap<int> maxHeap;
+    if (isHeapify)
+        maxHeap = MaxHeap<int>(testData, n);
+    else
+    {
+
+        for (int i = 0; i < n; i++)
+            maxHeap.add(testData[i]);
+    }
+    int arr[n];
+
+    for (int i = 0; i < n; i++)
+        arr[i] = maxHeap.extractMax();
+
+    for (int i = 1; i < n; i++)
+        if (arr[i - 1] < arr[i])
+            assert("error");
+
     std::cout << "test maxheap completed\n";
 
     clock_t endTime = clock();
@@ -35,29 +66,24 @@ double testHeap(int testData[], int n, bool isHeapify)
 int main(int argc, char const *argv[])
 {
     /* code */
-    std::default_random_engine e;
-    std::uniform_int_distribution<unsigned> u(0, 1000);
 
-    Array<int> array;
-    for (int i = 0; i < 10; i++)
-    {
-        array.addLast(i);
-    }
-    MaxHeap<int> maxHeap;
-    const int n = 100;
+    const int n = 10000;
 
-    int testdata[n];
-    for (int i = 0; i < n; i++)
+    // int testdata[n];
+    int *testData = new int[n];
+    for (int i = 0; i < n; ++i)
     {
-        maxHeap.add(u(e));
+        testData[i] = rand() % INT32_MAX;
+        std::cout << rand() % 100 << "\n";
     }
-    double time1 = testHeap(testdata, n, false);
+   
+    double time1 = testHeap(testData, n, true);
     std::cout << "Withou heapify: " << time1 << " \n";
 
-    // double time2 = testHeap(testdata, n, true);
+    double time2 = testHeap(testData, n, false);
+    std::cout << "Withou heapify: " << time2 << " \n";
 
-    // std::cout << "Withou heapify: " << time2 << " \n";
-    
+    // std::cout << rand()  << "\n";
 
     return 0;
 }
