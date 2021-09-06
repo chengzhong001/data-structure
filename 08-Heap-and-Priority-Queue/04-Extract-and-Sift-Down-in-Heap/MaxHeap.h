@@ -11,8 +11,9 @@ private:
             assert("index-0 does not have parent");
         return (index - 1) / 2;
     }
-    int leftChild(int index) { return index * 2 + 1; };
+    int leftChild(int index) { return index * 2 + 1; }
     int rightChild(int index) { return index * 2 + 2; }
+
 
 public:
     MaxHeap(int capacity) { data = new Array<T>(capacity); }
@@ -24,6 +25,21 @@ public:
     void add(T e)
     {
         data->addLast(e);
+    }
+
+     T findMax()
+    {
+        if (data->getSize() == 0)
+            assert("can not find max when heap is empty ");
+        return data->get(0);
+    }
+    // 取出堆中最大元素
+    T extractMax()
+    {
+        T ret = findMax();
+        data->swap(0, data->getSize() - 1);
+        data->removeLast();
+        return ret;
     }
 
     void siftUp(int k)
@@ -52,18 +68,4 @@ public:
         }
     }
 
-    T findMax()
-    {
-        if (data->getSize() == 0)
-            assert("can not find max when heap is empty ");
-        return data->get(0);
-    }
-    // 取出堆中最大元素
-    T extractMax()
-    {
-        T ret = findMax();
-        data->swap(0, data->getSize() - 1);
-        data->removeLast();
-        return ret;
-    }
 };
