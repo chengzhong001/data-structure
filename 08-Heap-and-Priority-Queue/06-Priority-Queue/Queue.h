@@ -1,6 +1,6 @@
 
 template<typename T>
-class PriorityQueue{
+class Queue{
     int getSize();
     bool isEmpty();
     void enqueue(T t);
