@@ -92,8 +92,9 @@ private:
             return query(rightTreeIndex, mid + 1, r, queryL, queryR);
         else if (queryR <= mid)
             return query(leftTreeIndex, 0, mid, queryL, queryR);
-        T leftResult = query(leftTreeIndex, 0, mid, queryL, queryR);
-        T rightResult = query(rightTreeIndex, mid + 1, r, queryL, queryR);
+
+        T leftResult = query(leftTreeIndex, 0, mid, queryL, mid);
+        T rightResult = query(rightTreeIndex, mid + 1, r, mid + 1, queryR);
         return function(leftResult, rightResult);
     }
 };

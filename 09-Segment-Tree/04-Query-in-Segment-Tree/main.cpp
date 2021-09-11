@@ -8,11 +8,7 @@ int main()
                                                          { return a + b; });
     std::cout << segmentTree->toString() << "\n";
 
-
-    int a[] = {1, 3, 4};
-    int b[] = {5, 6, 7};
-
-
+    std::cout << segmentTree->query(1, 3) << "\n";
 
     return 0;
 }
