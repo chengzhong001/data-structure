@@ -8,7 +8,8 @@ int main()
                                                          { return a + b; });
     std::cout << segmentTree->toString() << "\n";
 
-    std::cout << segmentTree->query(1, 3) << "\n";
-
+    std::cout << segmentTree->query(0, 2) << "\n";
+    std::cout << segmentTree->query(2, 5) << "\n";
+    std::cout << segmentTree->query(0, 5) << "\n";
     return 0;
 }
