@@ -1,6 +1,7 @@
 #include <vector>
 using namespace std;
 
+// leetcode 303
 class NumArray {
 public:
     NumArray(vector<int> nums) {
