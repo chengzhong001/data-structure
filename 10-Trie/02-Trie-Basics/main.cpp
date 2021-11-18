@@ -15,13 +15,9 @@ int main(int argc, char const *argv[])
 
         BSTSet<std::string> bstset;
         for (std::string word : words)
-        {
             bstset.add(word);
-        }
         for (std::string word : words)
-        {
             bstset.contains(word);
-        }
         clock_t endTime = clock();
         double time = (double)(endTime - startTime) / CLOCKS_PER_SEC;
         std::cout << "BST Time: " << time << std::endl;
@@ -30,13 +26,10 @@ int main(int argc, char const *argv[])
 
         Trie trie;
         for (std::string word : words)
-        {
             trie.add(word);
-        }
+    
         for (std::string word : words)
-        {
             trie.contains(word);
-        }
         endTime = clock();
         time = (double)(endTime - startTime) / CLOCKS_PER_SEC;
         std::cout << "Trie Time: " << time << std::endl;
