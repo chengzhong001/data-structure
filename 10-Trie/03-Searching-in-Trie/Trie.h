@@ -38,4 +38,14 @@ public:
         
     }
 
+    bool contains(std::string word){
+        Node *cur = root;
+        for(char c: word){
+            if(cur->next.find(c) == cur->next.end())
+                return false;
+            cur = &cur->next.find(c)->second;
+        }
+        return cur->isWord;
+    }
+
 };
