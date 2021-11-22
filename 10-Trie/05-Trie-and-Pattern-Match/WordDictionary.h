@@ -66,11 +66,9 @@ private:
         else
         {
             for (auto iter = node->next.begin(); iter != node->next.end(); iter++)
-            {
                 if (match(&node->next.find(iter->first)->second, word, index + 1))
                     return true;
-            }
-            return false;
         }
+        return false;
     }
 };
