@@ -2,7 +2,7 @@
 #include "Set.h"
 
 template <typename T>
-class BSTSet : public BST<T>
+class œ : public BST<T>
 {
 public:
     BSTSet() { bst = new BST<T>(); }

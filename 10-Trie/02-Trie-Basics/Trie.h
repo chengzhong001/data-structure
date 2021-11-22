@@ -6,9 +6,10 @@ class Trie
 private:
     class Node
     {
-    public:
+    private:
         bool isWord;
         std::map<char, Node> next;
+        friend Trie;
 
     public:
         Node(bool isWord) : isWord(isWord) {}

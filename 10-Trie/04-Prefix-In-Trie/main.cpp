@@ -12,10 +12,7 @@ int main(int argc, char const *argv[])
     if (FileOps::readFile("pride-and-prejudice.txt", words))
     {
        
-      
-
         Trie trie;
-
         for (int i = 0; i < 10; i++)
         {
             auto word = words[i];
@@ -26,7 +23,6 @@ int main(int argc, char const *argv[])
         std::cout << std::boolalpha << trie.isPrefix("t") << std::endl;
         
         trie.add("apple");
-
         std::cout << std::boolalpha << trie.contains("apple") << std::endl;
         std::cout << std::boolalpha << trie.isPrefix("ap") << std::endl;
 
