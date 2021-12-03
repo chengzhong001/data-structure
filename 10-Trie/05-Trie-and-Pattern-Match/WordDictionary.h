@@ -44,7 +44,7 @@ private:
     private:
         bool isWord;
         std::map<char, Node> next;
-        friend WordDictionary;
+        friend class WordDictionary;
 
     public:
         Node(bool isWord) : isWord(isWord) {}
