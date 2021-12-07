@@ -1,6 +1,6 @@
 #include "UnionFind1.h"
 #include "UnionFind2.h"
-
+#include "UnionFind3.h"
 #include <iostream>
 
 
@@ -46,12 +46,15 @@ int main(int argc, char const *argv[])
     /* code */
     int size = 100000;
     int m = 100000;
+    
     UnionFind1* uf1 = new UnionFind1(size);
-
     std::cout << "UnionFind1: " <<  testUF(uf1, m) << " s\n";
 
     UnionFind2* uf2 = new UnionFind2(size);
-
     std::cout << "UnionFind2: " <<  testUF(uf2, m) << " s\n";
+
+    UnionFind3* uf3 = new UnionFind3(size);
+    std::cout << "UnionFind2: " <<  testUF(uf3, m) << " s\n";
+
     return 0;
 }
