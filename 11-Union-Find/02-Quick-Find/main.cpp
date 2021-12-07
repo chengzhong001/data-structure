@@ -4,11 +4,12 @@
 int main(int argc, char const *argv[])
 {
     /* code */
-    int a[] = {1, 2, 3, 4, 8};
-    for (auto i : a)
-    {
-        std::cout << i << " ";
-    }
+    // int a[] = {1, 2, 3, 4, 8};
+    // for (auto i : a)
+    // {
+    //     std::cout << i << " ";
+    // }
+    //  UnionFind1 uf1(10);
 
     return 0;
 }

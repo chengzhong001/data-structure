@@ -1,3 +1,6 @@
+#ifndef __UNIONFIND1__
+#define __UNIONFIND1__
+
 #include "UF.h"
 #include <stdexcept>
 
@@ -21,7 +24,7 @@ public:
             return;
         for (int i = 0; i < size; i++)
         {
-            if (id[i] = pID)
+            if (id[i] == pID)
                 id[i] = qID;
         }
     }
@@ -42,3 +45,5 @@ private:
         return id[p];
     }
 };
+
+#endif

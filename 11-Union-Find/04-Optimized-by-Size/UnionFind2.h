@@ -15,9 +15,9 @@ public:
     }
     ~UnionFind2() { delete[] parent; }
 
-    int getSize() override { return size; }
-    bool isConnected(int p, int q) override { return find(p) == find(q); }
-    void unionElements(int p, int q) override
+    virtual int getSize() override { return size; }
+    virtual bool isConnected(int p, int q) override { return find(p) == find(q); }
+    virtual void unionElements(int p, int q) override
     {
         int pRoot = find(p);
         int qRoot = find(q);
