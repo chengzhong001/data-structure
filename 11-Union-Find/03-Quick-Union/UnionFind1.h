@@ -1,4 +1,5 @@
 #include "UF.h"
+#include <stdexcept>
 
 class UnionFind1 : public UF
 {

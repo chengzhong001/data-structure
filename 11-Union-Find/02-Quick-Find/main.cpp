@@ -1,4 +1,4 @@
-#include "UnionFind.h"
+#include "UnionFind1.h"
 #include <iostream>
 
 int main(int argc, char const *argv[])
