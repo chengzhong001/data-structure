@@ -13,13 +13,14 @@ double testUF(UF* uf, int m)
         int a = rand() % size;
         int b = rand() % size;
         uf->unionElements(a, b);
-    }
-    for (int i = 0; i < m; i++)
-    {
-        int a = rand() % size;
-        int b = rand() % size;
         uf->isConnected(a, b);
     }
+    // for (int i = 0; i < m; i++)
+    // {
+    //     int a = rand() % size;
+    //     int b = rand() % size;
+    //     uf->isConnected(a, b);
+    // }
 
     clock_t end_time = clock();
     return (double)(end_time - start_time) / CLOCKS_PER_SEC;
@@ -43,8 +44,8 @@ double testUF(UF* uf, int m)
 int main(int argc, char const *argv[])
 {
     /* code */
-    int size = 10000;
-    int m = 10000;
+    int size = 100000;
+    int m = 100000;
     UnionFind1* uf1 = new UnionFind1(size);
 
     std::cout << "UnionFind1: " <<  testUF(uf1, m) << " s\n";

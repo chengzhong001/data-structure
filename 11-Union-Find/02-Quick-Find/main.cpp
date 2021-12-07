@@ -9,7 +9,7 @@ int main(int argc, char const *argv[])
     // {
     //     std::cout << i << " ";
     // }
-    //  UnionFind1 uf1(10);
-
+     UnionFind1 uf1(10);
+    std::cout << uf1.getSize();
     return 0;
 }
